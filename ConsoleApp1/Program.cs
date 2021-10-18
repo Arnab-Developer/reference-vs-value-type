@@ -8,6 +8,10 @@ StudentStruct sstruct = new(1, "Jon Doe");
 ChangeStudentStruct(sstruct);
 WriteLine($"{sstruct.Id} {sstruct.Name}"); // output: 1 Jon Doe
 
+StudentStruct sstruct1 = new(1, "Jon Doe");
+ChangeStudentStruct1(ref sstruct1);
+WriteLine($"{sstruct1.Id} {sstruct1.Name}"); // output: 2 Bob
+
 StudentRecord srecord = new(1, "Jon Doe");
 ChangeStudentRecord(srecord);
 WriteLine($"{srecord.Id} {srecord.Name}"); // output: 2 Bob
@@ -19,6 +23,12 @@ static void ChangeStudentClass(StudentClass s)
 }
 
 static void ChangeStudentStruct(StudentStruct s)
+{
+    s.Id++;
+    s.Name = "Bob";
+}
+
+static void ChangeStudentStruct1(ref StudentStruct s)
 {
     s.Id++;
     s.Name = "Bob";
