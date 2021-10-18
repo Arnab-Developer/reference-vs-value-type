@@ -8,6 +8,10 @@ StudentStruct sstruct = new(1, "Jon Doe");
 ChangeStudentStruct(sstruct);
 WriteLine($"{sstruct.Id} {sstruct.Name}"); // output: 1 Jon Doe
 
+StudentRecord srecord = new(1, "Jon Doe");
+ChangeStudentRecord(srecord);
+WriteLine($"{srecord.Id} {srecord.Name}"); // output: 2 Bob
+
 static void ChangeStudentClass(StudentClass s)
 {
     s.Id++;
@@ -15,6 +19,12 @@ static void ChangeStudentClass(StudentClass s)
 }
 
 static void ChangeStudentStruct(StudentStruct s)
+{
+    s.Id++;
+    s.Name = "Bob";
+}
+
+static void ChangeStudentRecord(StudentRecord s)
 {
     s.Id++;
     s.Name = "Bob";
@@ -40,6 +50,19 @@ struct StudentStruct
     public string Name { get; set; }
 
     public StudentStruct(int id, string name)
+    {
+        Id = id;
+        Name = name;
+    }
+}
+
+record StudentRecord 
+{
+    public int Id { get; set; }
+
+    public string Name { get; set; }
+
+    public StudentRecord(int id, string name)
     {
         Id = id;
         Name = name;
