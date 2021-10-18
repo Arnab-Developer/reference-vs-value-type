@@ -1,23 +1,23 @@
 ﻿using static System.Console;
 
-StudentClass sclass = new(10, "jon");
+StudentClass sclass = new(1, "Jon Doe");
 ChangeStudentClass(sclass);
-WriteLine($"{sclass.Id} {sclass.Name}"); // output: 11 invalid
+WriteLine($"{sclass.Id} {sclass.Name}"); // output: 2 Bob
 
-StudentStruct sstruct = new(10, "jon");
+StudentStruct sstruct = new(1, "Jon Doe");
 ChangeStudentStruct(sstruct);
-WriteLine($"{sstruct.Id} {sstruct.Name}"); // output: 10 jon
+WriteLine($"{sstruct.Id} {sstruct.Name}"); // output: 1 Jon Doe
 
 static void ChangeStudentClass(StudentClass s)
 {
     s.Id++;
-    s.Name = "invalid";
+    s.Name = "Bob";
 }
 
 static void ChangeStudentStruct(StudentStruct s)
 {
     s.Id++;
-    s.Name = "invalid";
+    s.Name = "Bob";
 }
 
 class StudentClass
