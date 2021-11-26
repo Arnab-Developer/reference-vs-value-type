@@ -1,15 +1,14 @@
-﻿namespace ConsoleApp1.Models
+﻿namespace ConsoleApp1.Models;
+
+internal class StudentClass
 {
-    internal class StudentClass
+    public int Id { get; set; }
+
+    public string Name { get; set; }
+
+    public StudentClass(int id, string name)
     {
-        public int Id { get; set; }
-
-        public string Name { get; set; }
-
-        public StudentClass(int id, string name)
-        {
-            Id = id;
-            Name = name;
-        }
+        Id = id;
+        Name = name;
     }
 }
